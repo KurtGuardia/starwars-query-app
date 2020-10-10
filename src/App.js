@@ -10,7 +10,7 @@ function App() {
   return (
     <div className='App'>
       <h1>Star Wars Info</h1>
-      <Navbar />
+      <Navbar setPage={setPage} />
       <div className='content'>{page ? <Planets /> : <People />}</div>
     </div>
   );
