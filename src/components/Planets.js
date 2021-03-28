@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { useQuery, usePaginatedQuery } from 'react-query';
+import React, { useState } from 'react';
+import { useQuery } from 'react-query';
 import Planet from './Planet';
 
 const fetchPlanets = async (page) => {
@@ -33,11 +33,7 @@ const Planets = () => {
           </button>
           <span>{page}</span>
           <button
-            onClick={() =>
-              setPage((old) =>
-                data.count / data.results.length === old ? 6 : page + 1
-              )
-            }
+            onClick={() => setPage(page + 1)}
             disabled={page >= data.count / data.results.length}
           >
             Next page
